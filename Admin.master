@@ -99,7 +99,12 @@
             </tr>
             <tr>
                 <td class="auto-style19" style="background-color: #CCFFFF">
-                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="QLDH.aspx">Quản lý đơn hàng</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="QLDH.aspx">Quản lý doanh thu</asp:HyperLink>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style19" style="background-color: #CCFFFF">
+                    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="QLDH1.aspx">Quản lý đơn hàng</asp:HyperLink>
                 </td>
             </tr>
             <tr>

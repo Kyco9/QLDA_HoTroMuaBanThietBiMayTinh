@@ -48,4 +48,21 @@ public partial class QLTK_admin : System.Web.UI.Page
 
             
     }
+
+    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        string sql = ConfigurationManager.ConnectionStrings["dotnet1"].ToString();
+        SqlConnection cn = new SqlConnection(sql);
+        cn.Open();
+        string strcmd = "delete from Admin where ID=" + GridView1.DataKeys[e.RowIndex].Value;
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = cn;
+        cmd.CommandText = strcmd;
+        int rs = cmd.ExecuteNonQuery();
+        cn.Close();
+
+        load_view();
+    }
+
+   
 }

@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="nen">
-    <asp:Label ID="Label2" runat="server" Text="QUẢN LÝ ĐƠN HÀNG"></asp:Label>
+    <asp:Label ID="Label2" runat="server" Text="QUẢN LÝ DOANH THU"></asp:Label>
         <br />
         <br />
         <asp:Panel ID="Panel1" runat="server">

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -58,5 +61,18 @@ GridViewUpdateEventArgs e)
     protected void btn_timkiem_ad_Click(object sender, EventArgs e)
     {
         dssp.SelectCommand = "Select *, 'HinhAnh/'+Hinh as H from SANPHAM where TenSP like N'"+txt_timkiem.Text+"%'";
+    }
+
+    protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        string sql = ConfigurationManager.ConnectionStrings["dotnet1"].ToString();
+        SqlConnection cn = new SqlConnection(sql);
+        cn.Open();
+        string strcmd = "delete from SANPHAM where MaSP=" + GridView1.DataKeys[e.RowIndex].Value;
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = cn;
+        cmd.CommandText = strcmd;
+        int rs = cmd.ExecuteNonQuery();
+        cn.Close();
     }
 }
