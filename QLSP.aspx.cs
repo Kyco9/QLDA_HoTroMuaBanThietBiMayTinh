@@ -65,14 +65,16 @@ GridViewUpdateEventArgs e)
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        string sql = ConfigurationManager.ConnectionStrings["dotnet1"].ToString();
-        SqlConnection cn = new SqlConnection(sql);
-        cn.Open();
-        string strcmd = "delete from SANPHAM where MaSP=" + GridView1.DataKeys[e.RowIndex].Value;
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = cn;
-        cmd.CommandText = strcmd;
-        int rs = cmd.ExecuteNonQuery();
-        cn.Close();
+
+        dssp.SelectCommand = "delete from SANPHAM where MaSP=" + GridView1.DataKeys[e.RowIndex].Value;
+        //string sql = ConfigurationManager.ConnectionStrings["dotnet1"].ToString();
+        //SqlConnection cn = new SqlConnection(sql);
+        //cn.Open();
+        //string strcmd = "delete from SANPHAM where MaSP=" + GridView1.DataKeys[e.RowIndex].Value;
+        //SqlCommand cmd = new SqlCommand();
+        //cmd.Connection = cn;
+        //cmd.CommandText = strcmd;
+        //int rs = cmd.ExecuteNonQuery();
+        //cn.Close();
     }
 }

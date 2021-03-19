@@ -2,7 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
-    <asp:DataList ID="DataList1" runat="server" DataSourceID="DS" RepeatColumns="3">
+    <asp:label runat="server" ID="Label1"></asp:label>
+    
+    <asp:DataList ID="DataList1" runat="server" DataSourceID="DS" RepeatColumns="4">
         <ItemTemplate>
             <div class="khung">
             <asp:Image ID="Image1" runat="server" Height="135px" ImageUrl='<%# Eval("H") %>'  />
